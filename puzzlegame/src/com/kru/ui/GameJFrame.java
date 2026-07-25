@@ -12,7 +12,31 @@ public class GameJFrame extends JFrame {
         // 初始化界面
         initJFrame();
 
+        // 初始化菜单
         initJMenuBar();
+
+        // 初始化图片
+        initImage();
+    }
+
+    // 初始化图片
+    private void initImage() {
+
+        for (int i = 0; i < 4; i++) {
+            JLabel jLabel1 = new JLabel(
+                    new ImageIcon(String.format("puzzlegame/image/animal/animal3/%s.jpg",i))
+            );
+            jLabel1.setBounds(105 * i,0,105,105);
+
+            this.add(jLabel1);
+        }
+
+
+
+
+
+
+        this.setVisible(true);
     }
 
     private void initJMenuBar() {
@@ -53,5 +77,8 @@ public class GameJFrame extends JFrame {
         this.setLocationRelativeTo(null);
         // 设置默认的关闭模式
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // 3
+
+        // 取消默认的居中放置，只有取消了才会按照XY轴的形式添加组件
+        this.setLayout(null);
     }
 }
