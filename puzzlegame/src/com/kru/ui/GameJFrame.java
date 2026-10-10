@@ -22,21 +22,19 @@ public class GameJFrame extends JFrame {
     // 初始化图片
     private void initImage() {
 
-        for (int i = 0; i < 4; i++) {
-            JLabel jLabel1 = new JLabel(
-                    new ImageIcon(String.format("puzzlegame/image/animal/animal3/%s.jpg",i))
-            );
-            jLabel1.setBounds(105 * i,0,105,105);
+        for (int i = 0; i < 16; i++) {
+            JLabel jLabel = new JLabel(new ImageIcon("puzzlegame/image/animal/animal3/1.jpg"));
 
-            this.add(jLabel1);
+            jLabel.setBounds(105 * (i % 4),105 * (i / 4),105,105);
+
+            this.getContentPane().add(jLabel);
+
         }
 
 
 
 
 
-
-        this.setVisible(true);
     }
 
     private void initJMenuBar() {
@@ -80,5 +78,7 @@ public class GameJFrame extends JFrame {
 
         // 取消默认的居中放置，只有取消了才会按照XY轴的形式添加组件
         this.setLayout(null);
+
+        this.setVisible(true);
     }
 }
